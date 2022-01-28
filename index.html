@@ -1,0 +1,60 @@
+<!-- Sierra Morgan -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mission Control, We Have Blastoff!</title>
+    <script>
+    function StartTheCountdown() 
+    {
+        //purpose is to start the countdown and countrol it
+        //declaration of variables
+        var countdown = 10;
+        //1000 = 1 second beacause milliseconds are being used
+        var timeout = 10000
+        setTimeout(() => {
+            document.getElementById("CountdownDisplay").innerHTML = "We Have Blastoff!";
+            countdown = countdown - 1;
+        }, timeout)
+        timeout = timeout - 1000;
+        //loop for countdown 
+        //consists of the number of times the loop needs to be ran (i = 10) the condition for the loop to stop (i > 0) and the final expression to bring the statement closer to being false (i --)
+        for (let i = 10; i > 0; i --) {setTimeout(() => {
+            document.getElementById("CountdownDisplay").innerHTML = countdown;
+            countdown = countdown - 1;
+        }, timeout)
+        timeout = timeout - 1000;}
+    }
+    </script>
+     <!--CSS to add a background image-->
+     <style>
+        body
+        {
+            background-image: url("Space.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body style="background-color: darkslategray;">
+    <!--Heading of webpage-->
+    <h1 style="font-family: Arial, Helvetica, sans-serif; color: whitesmoke; text-decoration: underline;">UAT Mission Control</h1>
+    <!--adds image showing mission control-->
+    <img src="MissionControl.jpg" alt="Mission Control" width="500" height="250">
+    <!-- Program descriptor -->
+    <p style="color: whitesmoke;">Today we are intiating the blastoff sequence to send a ship to space.</p>
+    <!--puts a horizontal dividing line to help divide the webpage into sections-->
+    <hr>
+    <!--heading indicating countdown location-->
+    <h2 style="font-family:Arial, Helvetica, sans-serif; color:rgb(60, 148, 60)">Countdown</h2>
+    <!-- Button to start the countdown -->
+    <button type="button" onclick="StartTheCountdown()">Start Countdown</button>
+    <!-- Countdown text -->
+    <p id="CountdownDisplay" style="font-size: x-large; color: whitesmoke;">10</p>
+    <hr>
+    <!--footer to webpage-->
+    <footer>
+        <P style="color: whitesmoke; font-size: small;">UAT Space Mission Imagined</P>
+        <P style="color: whitesmoke; font-size: x-small;">Author: Sierra morgan</P>
+    </footer>
+</body>
+</html>
